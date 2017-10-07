@@ -20,7 +20,7 @@ def get_data():
             return False
     
     card_names = ['gas','supermarket','AEE','telecommunication','antenna','tower','shelter','refugee', 'pet','hospital','dialysis','pharmacy','port',
-                    'container','bank','coopratives','ATMs','barrel','bread','ama','federal_mail']
+                    'container','bank','cooperatives','ATMs','barrel','bread','ama','federal_mail']
 
     for j,card in enumerate(list(r.find_all(is_data_card))[1:-1]):
         name = ""
