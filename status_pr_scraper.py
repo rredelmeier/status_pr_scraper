@@ -86,10 +86,27 @@ def get_data():
             total = str_to_float(total)
             ret[card_names[j]]={'Reported Value':big_val,'Current':curr,'Total':total,'Last Update':last_update,'Source':source,'Note':note}
         else:
-            ret[card_names[j]+'_diesel']={'Reported Value':str_to_float(big_val['Diesel']),'Current':curr,'Total':total,'Last Update':last_update,'Note':note}
-            ret[card_names[j]+'_gasoline']={'Reported Value':str_to_float(big_val['Gasoline']),'Current':curr,'Total':total,'Last Update':last_update,'Note':note}
+            ret[card_names[j]+'_diesel']={'Reported Value':str_to_float(big_val['Diesel']),'Current':curr,'Total':total,'Last Update':last_update,'Source':source,'Note':note}
+            ret[card_names[j]+'_gasoline']={'Reported Value':str_to_float(big_val['Gasoline']),'Current':curr,'Total':total,'Last Update':last_update,'Source':source,'Note':note}
     return ret
 
-test_dict = get_data()
-for key in test_dict.keys():
-    print(key+": "+str(test_dict[key]))
+def get_data_as_tsv(out_path,sep='\t'):
+    tsv_headers = ['Key','Reported Value','Current','Total','Last Update','Source','Note']
+
+    with open(out_path,'w+') as f:
+        for header in tsv_headers:
+            f.write(header)
+            if header != tsv_headers[-1]:
+                f.write(sep)
+        f.write('\n')
+
+        data_dict = get_data()
+        for key in data_dict.keys():
+            f.write(key)
+            f.write(sep)
+
+            for header in tsv_headers[1:]:
+                f.write(str(data_dict[key][header]))
+                if header != tsv_headers[-1]:
+                    f.write(sep)
+            f.write('\n')
