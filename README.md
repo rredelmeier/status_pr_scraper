@@ -59,7 +59,7 @@ Key | Data | Notes
 Reported Value | The main value, printed in large on statusPR. Often, this is the only data available. It can be a percentage or raw number. |
 Current | If the reported value is a percentage, then if statusPR reports the raw number (numerator), it'll be stored here. | Not all percentages also provide the raw number.
 Total | If the reported value is a percentage, then if statusPR reports the total (denominator), it'll be stored here. | Not all percentages also provide the raw number.
-Last Update | The date, formatted in the style of "06/oct/2017" | Hopefully changed to an easier-to-work-with format soon.
+Last Update | Last update date | Stored as datatime.date.
 Source | StatusPR's source for the data |
 Note | If StatusPR included a note with the data card, it'll be stored here. | Most cards don't include notes.
 
@@ -83,7 +83,7 @@ Alternatively, call get_data_as_tsv(file_path). The function will write the data
 
 3. ~~Split barrels of diesel/gas into two different pieces of data, one for each type.~~ Done!
 
-4. Format the dates as python dates.
+4. ~~Format the dates as python dates~~. Done!
 
 5. ~~Store the numbers as numbers, not strings.~~ Done! Stored as floats/None.
 
