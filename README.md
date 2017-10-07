@@ -84,4 +84,4 @@ The function returns the dictionary.
 
 <b>Thanks to</b>
 
-Philip Bump at the Washington Post, who's <a href="https://www.washingtonpost.com/news/politics/wp/2017/10/06/fema-buried-updates-on-puerto-rico-here-they-are/?utm_term=.701ef12a9d67">October 6 article</a> inspired this work. Also, just a solid journalist, and that deserves thanks just as well.
+Philip Bump at the Washington Post, whose <a href="https://www.washingtonpost.com/news/politics/wp/2017/10/06/fema-buried-updates-on-puerto-rico-here-they-are/?utm_term=.701ef12a9d67">October 6 article</a> inspired this work. Also, just a solid journalist, and that deserves thanks just as well.
