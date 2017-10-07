@@ -1,9 +1,9 @@
 # status_pr_scraper
-Scrapes status.pr for full details on the Puerto Rico recovery
+Scrapes <a href=status.pr>StatusPR</a> for full details on the Puerto Rico recovery
 
 <b>Summary</b>
 
-This python module provide a function that returns most data from the <a href=status.pr>status.pr</a> dashboard. Given that 
+This python module provide a function that returns most data from the StatusPR dashboard. Given that 
 <a href="https://www.theatlantic.com/politics/archive/2017/10/why-did-fema-remove-stats-about-puerto-ricos-recovery/542343/">FEMA has taken down some of its statistics</a>,
 statusPR is the best site available for the stats on Puerto Rico's recovery from Hurricane Maria, but it lacks an easy-access API to collect that information.
 I therefore created a script that scrapes and cleans the data on the dashboard to make this great resource more accessible.
