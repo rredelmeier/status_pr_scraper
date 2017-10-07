@@ -40,9 +40,9 @@ bread | Active buisenesses processing bread
 ama | Active Metropolitan Bus Authority routes
 federal_mail | Active post offices (USPS)
 
-*: Cards where I am particularly unsure of the specifics of what the metric is precisely measuring.
+\*: Cards where I am particularly unsure of the specifics of what the metric is precisely measuring.
 
-The data dictionaries all have the same format:
+The data dictionaries all have the same format. Every value is a string, for now:
 
 Key | Data | Notes
 --- | --- | --- |
@@ -65,3 +65,19 @@ This module requires the packages <a href="http://docs.python-requests.org/en/ma
 
 In whatever piece of python you want to get this dictionary into, import status_pr_scraper, and call the function get_data().
 The function returns the dictionary.
+
+<b>TO-DO</b>
+
+(In no particular order)
+
+1. Return data in a better-to-use format than a dictionary, for heaven's sake.
+
+2. Make a function that will just output the data into a csv/tsv, as a stop-gap for the above.
+
+3. Split barrels of diesel/gas into two different pieces of data, one for each type.
+
+4. Format the dates as python dates.
+
+5. Store the numbers as numbers, not strings.
+
+6. Add more data from other places on statusPR
