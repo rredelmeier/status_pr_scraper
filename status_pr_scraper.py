@@ -2,6 +2,7 @@ def get_data():
     import requests
     import re
     from bs4 import BeautifulSoup
+    import datetime
 
     r = BeautifulSoup(requests.get('http://status.pr/Home').text,'html.parser')
 
@@ -29,6 +30,13 @@ def get_data():
         else:
             return None
 
+    def str_to_date(date_str):
+        m_dict = {'jan':1,'feb':2,'mar':3,'apr':4,'may':5,'jun':6,'jul':7,'aug':8,'sep':9,'oct':10,'nov':11,'dec':12}
+        d = int(date_str[:2])
+        m = date_str[date_str.find('/')+1:date_str.find('/',3)]
+        y = int(date_str[-4:])
+
+        return datetime.date(y,m_dict[m],d)
 
     card_names = ['gas','supermarket','AEE','telecommunication','antenna','tower','shelter','refugee', 'pet','hospital','dialysis','pharmacy','port',
                     'container','bank','cooperatives','ATMs','barrel','bread','ama','federal_mail']
@@ -84,8 +92,10 @@ def get_data():
             big_val = str_to_float(big_val)
             curr = str_to_float(curr)
             total = str_to_float(total)
+            last_update = str_to_date(last_update)
             ret[card_names[j]]={'Reported Value':big_val,'Current':curr,'Total':total,'Last Update':last_update,'Source':source,'Note':note}
         else:
+            last_update = str_to_date(last_update)
             ret[card_names[j]+'_diesel']={'Reported Value':str_to_float(big_val['Diesel']),'Current':curr,'Total':total,'Last Update':last_update,'Source':source,'Note':note}
             ret[card_names[j]+'_gasoline']={'Reported Value':str_to_float(big_val['Gasoline']),'Current':curr,'Total':total,'Last Update':last_update,'Source':source,'Note':note}
     return ret
